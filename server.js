@@ -2,6 +2,9 @@ var http = require('http');
 var fs = require('fs');
 var path = require('path');
 var mime = require('mime');
+require('dotenv').config();
+
+const PORT = process.env.PORT || 8080
 
 var cache = {};
 
@@ -53,8 +56,8 @@ var server = http.createServer(function(request, response){
     serveStatic(response, cache, absPath);
 });
 
-server.listen(3000, function(){
-    console.log("Server listening on port 3000.");
+server.listen(PORT, function(){
+    console.log(`Server listening on port ${PORT}.`);
 });
 
 var chatServer = require('./lib/chat_server');
