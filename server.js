@@ -3,6 +3,10 @@ var fs = require('fs');
 var path = require('path');
 var mime = require('mime');
 require('dotenv').config();
+var express = require('express');
+
+var app = express();
+app.use(express.static('public'));
 
 const PORT = process.env.PORT || 8080
 
@@ -43,18 +47,8 @@ function serveStatic(response, cache, absPath){
     }
 }
 
-var server = http.createServer(function(request, response){
-    var filePath = false;
+var server = http.createServer(app);
 
-    if(request.url == '/'){
-        filePath = 'public/index.html';
-    } else {
-        filePath = 'public' + request.url;
-    }
-
-    var absPath = './' + filePath;
-    serveStatic(response, cache, absPath);
-});
 
 server.listen(PORT, function(){
     console.log(`Server listening on port ${PORT}.`);
