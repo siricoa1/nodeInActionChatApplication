@@ -1,14 +1,16 @@
-body {
-    padding: 50px;
+html, body {
+    padding: 0px;
+    margin: 0px;
     font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
     color: #00B7FF;
 }
-
+#title {
+    text-align: center;
+}
 #content {
-    width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -16,33 +18,27 @@ a {
 #room {
     background-color: #ddd;
     margin-bottom: 1em;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #messages {
-    width: 690px;
+    width: 80%;
     height: 300px;
     overflow: auto;
     background-color: #eee;
     margin-bottom: 1em;
-    margin-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-#room-list{
-    float: right;
-    width: 100px;
-    height: 300px;
-    overflow: auto;
-}
-
-#room-list div{
-    border-bottom: 1px solid #eee;
-}
-
-#room-list div:hover{
-    background-color: #ddd;
+#send-form {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 #send-message {
-    width: 700px;
+    width: 80%;
     margin-bottom: 1em;
     margin-right: 1em;
 }
